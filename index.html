@@ -45,10 +45,10 @@
             text-transform: uppercase;
         }
 
-        /* --- HERO SECTION --- */
+        /* --- REFINED HERO SECTION --- */
         header {
             height: 100vh;
-            position: relative; /* Essential for absolute positioning of text */
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -63,7 +63,7 @@
 
         .hero-top {
             position: absolute;
-            top: 25%; /* Fixed in the sky section */
+            top: 25%; /* Anchored in the sky */
             max-width: 900px;
             animation: fadeIn 3s ease-out;
         }
@@ -78,7 +78,7 @@
 
         .hero-bottom {
             position: absolute;
-            bottom: 15%; /* Sunk deep into the water reflection */
+            bottom: 8%; /* Sunk deeper into the water reflection */
             max-width: 900px;
             animation: fadeIn 3s ease-out;
         }
@@ -101,7 +101,7 @@
             opacity: 0.8;
         }
 
-        /* --- CATEGORIES --- */
+        /* --- PORTFOLIO GRID --- */
         .work-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -158,7 +158,7 @@
         .cat-box:hover .cat-overlay { background: rgba(10, 25, 47, 0.8); }
         .cat-box:hover p { opacity: 1; transform: translateY(0); }
 
-        /* --- PHILOSOPHY --- */
+        /* --- PHILOSOPHY SECTION --- */
         .jacobs-section {
             padding: 120px 15%;
             text-align: center;
@@ -192,7 +192,7 @@
             .work-grid { grid-template-columns: 1fr; }
             .hero-top { top: 20%; }
             .hero-top h1 { font-size: 2.2rem; }
-            .hero-bottom { bottom: 10%; }
+            .hero-bottom { bottom: 5%; }
             .hero-bottom h1 { font-size: 1.6rem; }
         }
     </style>
