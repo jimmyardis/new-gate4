@@ -195,6 +195,40 @@
             .hero-bottom { bottom: 5%; }
             .hero-bottom h1 { font-size: 1.6rem; }
         }
+   
+    /* --- UNIVERSAL MOBILE SCALING --- */
+@media (max-width: 768px) {
+    /* Shrinks the main hero definitions */
+    .def-hero-word { 
+        font-size: 2.5rem !important; 
+    }
+    .def-hero-meaning { 
+        font-size: 1.4rem !important; 
+    }
+    .hero-definition-container { 
+        grid-template-columns: 1fr; 
+        gap: 30px; 
+        width: 90%; 
+    }
+
+    /* Shrinks the "Leads to Life" finish */
+    .hero-statement-finish h1 { 
+        font-size: 2rem !important; 
+        padding: 0 10px;
+    }
+
+    /* Shrinks the Ledger/Category headers */
+    .ledger-label h3 { 
+        font-size: 1.8rem !important; 
+    }
+    
+    /* Adjusts the navigation for smaller screens */
+    nav {
+        padding: 20px 5%;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
     </style>
 </head>
 <body>
