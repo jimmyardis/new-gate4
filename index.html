@@ -61,31 +61,42 @@
             box-sizing: border-box;
         }
 
-        .hero-statement {
+        .hero-top {
+            position: absolute;
+            top: 22%;
+            max-width: 1000px;
+            width: 90%;
+            animation: fadeIn 3s ease-out;
+        }
+
+        .hero-top h1 {
+            font-size: 3.2rem;
+            font-style: italic;
+            font-weight: 400;
+            margin: 0;
+            text-shadow: 2px 2px 12px rgba(0,0,0,0.5);
+        }
+
+        .hero-bottom {
+            position: absolute;
+            bottom: 10%;
             max-width: 900px;
             width: 90%;
             animation: fadeIn 3s ease-out;
         }
 
-        .hero-statement h1 {
-            font-size: 3rem;
-            font-style: italic;
-            font-weight: 400;
-            margin: 0 0 20px;
-            text-shadow: 2px 2px 12px rgba(0,0,0,0.5);
-        }
-
-        .hero-statement p {
+        .hero-bottom p {
             font-size: 1.2rem;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             font-weight: 300;
-            opacity: 0.9;
+            opacity: 0.95;
+            margin: 0;
         }
 
-        /* --- THE PHILOSOPHY BRIDGE --- */
+        /* --- PHILOSOPHY SECTION (QUOTES REMOVED) --- */
         .philosophy-section {
-            padding: 120px 10%;
+            padding: 120px 15%;
             text-align: center;
             background-color: var(--white);
         }
@@ -94,16 +105,8 @@
             font-size: 2.2rem;
             line-height: 1.6;
             font-weight: 400;
-            margin-bottom: 40px;
+            margin-bottom: 0;
             color: var(--navy);
-        }
-
-        .scripture-anchor {
-            font-size: 1.8rem;
-            font-style: italic;
-            color: var(--gold);
-            margin-top: 60px;
-            display: block;
         }
 
         /* --- CATEGORIES GRID --- */
@@ -142,7 +145,7 @@
 
         .cat-overlay h2 {
             color: white;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             letter-spacing: 4px;
             text-transform: uppercase;
             text-align: center;
@@ -151,6 +154,21 @@
 
         .cat-box:hover img { transform: scale(1.05); opacity: 0.4; }
         .cat-box:hover .cat-overlay { background: rgba(10, 25, 47, 0.8); }
+
+        /* --- SCRIPTURE ANCHOR (MOVED BELOW CATEGORIES) --- */
+        .scripture-anchor-section {
+            padding: 100px 10%;
+            text-align: center;
+            background-color: var(--white);
+            border-top: 1px solid #eee;
+        }
+
+        .scripture-anchor {
+            font-size: 2rem;
+            font-style: italic;
+            color: var(--gold);
+            display: block;
+        }
 
         footer {
             padding: 80px 8%;
@@ -166,15 +184,19 @@
         /* --- MOBILE OPTIMIZATION --- */
         @media (max-width: 768px) {
             nav { padding: 20px 30px; }
-            .hero-statement h1 { font-size: 8vw !important; }
-            .philosophy-section h2 { font-size: 6vw !important; }
+            .hero-top { top: 15%; }
+            .hero-top h1 { font-size: 8vw !important; }
+            .hero-bottom { bottom: 8%; }
+            .hero-bottom p { font-size: 3.5vw !important; }
+            .philosophy-section h2 { font-size: 6vw !important; padding: 0 10px; }
             .work-grid { grid-template-columns: 1fr; }
             .cat-box { height: 400px; }
+            .scripture-anchor { font-size: 6.5vw !important; }
             footer { flex-direction: column; gap: 20px; text-align: center; }
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
@@ -187,19 +209,16 @@
     </nav>
 
     <header>
-        <div class="hero-statement">
+        <div class="hero-top">
             <h1>Passionate advocates of the human scale.</h1>
+        </div>
+        <div class="hero-bottom">
             <p>Building and restoring the more beautiful built environment.</p>
         </div>
     </header>
 
     <section class="philosophy-section">
-        <h2>"Combining lessons from history with modern advances, we work to build and restore a more beautiful built environment aimed at enhancing relationship."</h2>
-        
-        <div class="scripture-anchor">
-            "Narrow is the gate…which leads to life.*"
-            <p style="font-size: 0.8rem; letter-spacing: 2px; font-family: 'Inter', sans-serif; margin-top: 20px; opacity: 0.6; font-style: normal; color: var(--navy);">MATTHEW 7:13-14</p>
-        </div>
+        <h2>Combining lessons from history with modern advances, we work to build and restore a more beautiful built environment aimed at enhancing relationship.</h2>
     </section>
 
     <div class="work-grid" id="portfolio">
@@ -225,13 +244,20 @@
         </div>
     </div>
 
+    <section class="scripture-anchor-section">
+        <div class="scripture-anchor">
+            Narrow is the gate…which leads to life.*
+        </div>
+        <p style="font-size: 0.75rem; letter-spacing: 3px; font-family: 'Inter', sans-serif; margin-top: 25px; opacity: 0.5; color: var(--navy); text-transform: uppercase;">MATTHEW 7:13-14</p>
+    </section>
+
     <footer>
         <div>Places of Enduring Value | Narrow Gate</div>
         <div>Charleston, South Carolina</div>
     </footer>
 
     <script>
-        ScrollReveal().reveal('.cat-box, .philosophy-section', { interval: 150, distance: '30px', origin: 'bottom' });
+        ScrollReveal().reveal('.cat-box, .philosophy-section, .scripture-anchor-section', { interval: 150, distance: '30px', origin: 'bottom' });
     </script>
 </body>
 </html>
