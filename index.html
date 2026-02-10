@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Narrow Gate | Places of Enduring Value</title>
+    <title>Narrow Gate | Legacy & Design</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/scrollreveal"></script>
     <style>
@@ -12,6 +12,7 @@
             --white: #ffffff;
             --gold: #c5a059;
             --overlay: rgba(10, 25, 47, 0.4);
+            --light-grey: #f8fafc;
         }
 
         body {
@@ -45,7 +46,7 @@
             text-transform: uppercase;
         }
 
-        /* --- REFINED HERO SECTION --- */
+        /* --- HERO SECTION --- */
         header {
             height: 100vh;
             position: relative;
@@ -61,57 +62,61 @@
             box-sizing: border-box;
         }
 
-        .hero-top {
-            position: absolute;
-            top: 25%; /* Anchored in the sky */
+        .hero-statement {
             max-width: 900px;
+            width: 90%;
             animation: fadeIn 3s ease-out;
         }
 
-        .hero-top h1 {
+        .hero-statement h1 {
             font-size: 3rem;
             font-style: italic;
             font-weight: 400;
-            margin: 0;
+            margin: 0 0 20px;
             text-shadow: 2px 2px 12px rgba(0,0,0,0.5);
         }
 
-        .hero-bottom {
-            position: absolute;
-            bottom: 8%; /* Sunk deeper into the water reflection */
-            max-width: 900px;
-            animation: fadeIn 3s ease-out;
-        }
-
-        .hero-bottom h1 {
-            font-size: 2.2rem;
-            font-style: italic;
-            font-weight: 400;
-            margin: 0;
-            color: rgba(255, 255, 255, 0.95);
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
-        }
-
-        .scripture-ref {
-            letter-spacing: 4px;
+        .hero-statement p {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             font-weight: 300;
-            font-size: 0.8rem;
-            margin-top: 15px;
-            display: block;
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
-        /* --- PORTFOLIO GRID --- */
+        /* --- THE PHILOSOPHY BRIDGE --- */
+        .philosophy-section {
+            padding: 120px 10%;
+            text-align: center;
+            background-color: var(--white);
+        }
+
+        .philosophy-section h2 {
+            font-size: 2.2rem;
+            line-height: 1.6;
+            font-weight: 400;
+            margin-bottom: 40px;
+            color: var(--navy);
+        }
+
+        .scripture-anchor {
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--gold);
+            margin-top: 60px;
+            display: block;
+        }
+
+        /* --- CATEGORIES GRID --- */
         .work-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            height: auto;
+            grid-template-columns: repeat(3, 1fr);
             background: var(--navy);
         }
 
         .cat-box {
             position: relative;
-            height: 450px;
+            height: 600px;
             overflow: hidden;
             cursor: pointer;
             border: 0.2px solid rgba(255,255,255,0.05);
@@ -138,162 +143,97 @@
 
         .cat-overlay h2 {
             color: white;
-            font-size: 2rem;
-            letter-spacing: 5px;
+            font-size: 1.8rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            margin: 0;
-        }
-
-        .cat-overlay p {
-            color: var(--gold);
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.2rem;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-        }
-
-        .cat-box:hover img { transform: scale(1.08); opacity: 0.4; }
-        .cat-box:hover .cat-overlay { background: rgba(10, 25, 47, 0.8); }
-        .cat-box:hover p { opacity: 1; transform: translateY(0); }
-
-        /* --- PHILOSOPHY SECTION --- */
-        .jacobs-section {
-            padding: 120px 15%;
             text-align: center;
-            background-color: var(--white);
-            border-top: 1px solid #eee;
+            padding: 0 20px;
         }
 
-        .jacobs-section blockquote {
-            font-size: 2rem;
-            color: var(--navy);
-            font-style: italic;
-            margin-bottom: 30px;
-        }
+        .cat-box:hover img { transform: scale(1.05); opacity: 0.4; }
+        .cat-box:hover .cat-overlay { background: rgba(10, 25, 47, 0.8); }
 
         footer {
-            padding: 60px;
-            text-align: center;
+            padding: 80px 8%;
             background: var(--navy);
             color: white;
+            display: flex;
+            justify-content: space-between;
             font-size: 0.75rem;
             letter-spacing: 3px;
             text-transform: uppercase;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @media (max-width: 900px) {
+        /* --- MOBILE OPTIMIZATION --- */
+        @media (max-width: 768px) {
+            nav { padding: 20px 30px; }
+            .hero-statement h1 { font-size: 8vw !important; }
+            .philosophy-section { padding: 80px 8%; }
+            .philosophy-section h2 { font-size: 6vw !important; }
             .work-grid { grid-template-columns: 1fr; }
-            .hero-top { top: 20%; }
-            .hero-top h1 { font-size: 2.2rem; }
-            .hero-bottom { bottom: 5%; }
-            .hero-bottom h1 { font-size: 1.6rem; }
+            .cat-box { height: 400px; }
+            footer { flex-direction: column; gap: 20px; text-align: center; }
         }
-   
-    /* --- UNIVERSAL MOBILE SCALING --- */
-@media (max-width: 768px) {
-    /* Shrinks the main hero definitions */
-    .def-hero-word { 
-        font-size: 2.5rem !important; 
-    }
-    .def-hero-meaning { 
-        font-size: 1.4rem !important; 
-    }
-    .hero-definition-container { 
-        grid-template-columns: 1fr; 
-        gap: 30px; 
-        width: 90%; 
-    }
 
-    /* Shrinks the "Leads to Life" finish */
-    .hero-statement-finish h1 { 
-        font-size: 2rem !important; 
-        padding: 0 10px;
-    }
-
-    /* Shrinks the Ledger/Category headers */
-    .ledger-label h3 { 
-        font-size: 1.8rem !important; 
-    }
-    
-    /* Adjusts the navigation for smaller screens */
-    nav {
-        padding: 20px 5%;
-        flex-direction: column;
-        gap: 10px;
-    }
-}
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="brand">Narrow Gate</div>
-        <div style="color: rgba(255,255,255,0.6); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 300;">Legacy & Design</div>
+        <div style="color: rgba(255,255,255,0.6); font-size: 0.7rem; letter-spacing: 3px;">LEGACY & DESIGN</div>
     </nav>
 
     <header>
-        <div class="hero-top">
-            <h1>"Enter through the narrow gate..."</h1>
-        </div>
-
-        <div class="hero-bottom">
-            <h1>"...for narrow is the gate and difficult is the way which leads to life."</h1>
-            <span class="scripture-ref">MATTHEW 7:13-14</span>
+        <div class="hero-statement">
+            <h1>Passionate advocates of the human scale.</h1>
+            <p>Building and restoring the more beautiful built environment.</p>
         </div>
     </header>
 
+    <section class="philosophy-section">
+        <h2>"Combining lessons from history with modern advances, we work to build and restore a more beautiful built environment aimed at enhancing relationship."</h2>
+        
+        <div class="scripture-anchor">
+            "Narrow is the gate…which leads to life.*"
+            <p style="font-size: 0.8rem; letter-spacing: 2px; font-family: 'Inter', sans-serif; margin-top: 20px; opacity: 0.6; font-style: normal; color: var(--navy);">MATTHEW 7:13-14</p>
+        </div>
+    </section>
+
     <div class="work-grid" id="portfolio">
         <div class="cat-box">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGDsQ80nRqIjJY7r_3O_7kIzx6_OxG0B5SyQ&s" alt="Neighborhoods">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGDsQ80nRqIjJY7r_3O_7kIzx6_OxG0B5SyQ&s" alt="New Neighborhoods">
             <div class="cat-overlay">
-                <h2>Neighborhoods</h2>
-                <p>I'On & Newpoint</p>
+                <h2>New Neighborhoods</h2>
             </div>
         </div>
+
         <div class="cat-box">
-            <img src="https://bt-wpstatic.freetls.fastly.net/wp-content/blogs.dir/3/files/2013/04/5.jpg" alt="Restoration">
+            <img src="https://bt-wpstatic.freetls.fastly.net/wp-content/blogs.dir/3/files/2013/04/5.jpg" alt="Urban Renovation">
             <div class="cat-overlay">
-                <h2>Restoration</h2>
-                <p>Fort Sullivan</p>
+                <h2>Urban Renovation</h2>
             </div>
         </div>
+
         <div class="cat-box">
-            <img src="https://images.squarespace-cdn.com/content/v1/59944cda03596ee46fd2af25/1520008910631-QZSKU0LHTNO7P5TWAS55/Morri+Sq-107.jpeg?format=2500w" alt="Infill">
-            <div class="cat-overlay">
-                <h2>Urban Infill</h2>
-                <p>Morris Square</p>
-            </div>
-        </div>
-        <div class="cat-box">
-            <img src="https://www.cnu.org/sites/default/files/Earls-court-plan.png" alt="Reuse">
+            <img src="https://www.cnu.org/sites/default/files/Earls-court-plan.png" alt="Adaptive Reuse">
             <div class="cat-overlay">
                 <h2>Adaptive Reuse</h2>
-                <p>Earl's Court</p>
             </div>
         </div>
     </div>
 
-    <section class="jacobs-section">
-        <blockquote class="quote">
-            "Cities have the capability of providing something for everybody, only because, and only when, they are created by everybody."
-        </blockquote>
-        <p style="letter-spacing: 3px; font-weight: 600; font-size: 0.9rem;">— JANE JACOBS</p>
-    </section>
-
     <footer>
-        <p>Places of Enduring Value | Narrow Gate</p>
-        <p style="opacity: 0.5; margin-top: 10px;">Charleston, South Carolina</p>
+        <div>Places of Enduring Value | Narrow Gate</div>
+        <div>Charleston, South Carolina</div>
     </footer>
 
     <script>
-        ScrollReveal().reveal('.cat-box', { interval: 150, distance: '20px', origin: 'bottom' });
+        ScrollReveal().reveal('.cat-box, .philosophy-section', { interval: 150, distance: '30px', origin: 'bottom' });
     </script>
 </body>
 </html>
